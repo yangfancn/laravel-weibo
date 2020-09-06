@@ -6,10 +6,10 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('title', 'Weibo app') - Laravel 入门教程</title>
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand" href="/">Weibo app</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

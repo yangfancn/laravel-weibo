@@ -10899,12 +10899,39 @@ a.text-dark:focus {
   }
 }
 
+/* variable */
+
 body {
   font-size: 14px;
   font-weight: normal;
 }
 
+p,
+span,
+i,
+ul,
+li,
+dl,
+dt,
+dd,
+div {
+  color: #4f4f4f;
+}
+
+a {
+  color: #f92323;
+}
+
+a:hover {
+  color: orange;
+}
+
 nav.navbar.navbar-expand-md {
   margin-bottom: 20px;
+  background-color: #e3f2fd;
+}
+
+nav .nav-link {
+  font-size: 16px;
 }
 

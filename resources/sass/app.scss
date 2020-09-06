@@ -1,12 +1,31 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+//global variable
+@import './variable';
 
 body {
   font-size: 14px;
   font-weight: normal;
 }
 
+p,span,i,ul,li,dl,dt,dd,div {
+  color: $font-color;
+}
+
+a {
+  color: $link-color;
+  &:hover { //使用&引用父元素
+    color: orange;
+  }
+}
 
 nav.navbar.navbar-expand-md {
   margin-bottom: 20px;
+  background-color: $nav-color;
+}
+
+nav { //scss 嵌套
+  .nav-link {
+    font-size: 16px;
+  }
 }
