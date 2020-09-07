@@ -30,6 +30,8 @@
             value="{{ old('password_confirmation') }}">
           </div>
           <button type="submit" class="btn btn-primary">注册</button>
+          <hr>
+          <p>已有账号？去<a href="{{ route('login') }}">登录</a></p>
         </form>
       </div>
     </div>
