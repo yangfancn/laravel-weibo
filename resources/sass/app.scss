@@ -19,6 +19,10 @@ a {
   }
 }
 
+.alert ul{
+  margin-bottom: 0;
+}
+
 nav.navbar.navbar-expand-md {
   margin-bottom: 20px;
   background-color: $nav-color;
@@ -69,4 +73,15 @@ section.user-info {
   float: left;
   max-width: 50px;
   border-radius: 50%;
+}
+
+//user edit
+
+.gravatar_edit {
+  margin: 15px 0;
+  text-align: center;
+  .gravatar {
+    float: none;
+    max-width: 100px;
+  }
 }

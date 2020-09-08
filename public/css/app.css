@@ -10926,6 +10926,10 @@ a:hover {
   color: orange;
 }
 
+.alert ul {
+  margin-bottom: 0;
+}
+
 nav.navbar.navbar-expand-md {
   margin-bottom: 20px;
   background-color: #e3f2fd;
@@ -10976,5 +10980,15 @@ section.user-info h1 {
   float: left;
   max-width: 50px;
   border-radius: 50%;
+}
+
+.gravatar_edit {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.gravatar_edit .gravatar {
+  float: none;
+  max-width: 100px;
 }
 
