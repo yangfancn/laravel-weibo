@@ -2,13 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\models\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except'=> ['index', 'show', 'create', 'store']
+        ]);
+        $this->middleware('guest', [
+            'only'=> ['create']
+        ]);
+    }
+
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('users.index', compact('users'));
+    }
+
     public function create()
     {
         return view('users.create');
@@ -42,11 +59,17 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        //权限认证
+        $this->authorize('update', $user);
+
         return view('users.edit', compact('user'));
     }
 
     public function update(User $user, Request $request)
     {
+        //权限认证
+        $this->authorize('update', $user);
+
         $this->validate($request, [
 //           'name'=> 'required|max:50|unique:users,name,' . $user->id,
             'name'=> [
