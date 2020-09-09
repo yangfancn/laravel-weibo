@@ -22,18 +22,19 @@ class SessionsController extends Controller
 
     public function store(Request $request)
     {
+
         $credentials = $this->validate($request, [
             'email'=> 'required|email|max:255',
             'password'=> 'required'
         ]);
 
         if(Auth::attempt($credentials, $request->has('remember'))){
-            if (Auth::user()->actived) {
+            if (Auth::user()->activated) {
                 session()->flash('success', '欢迎回来！');
                 return redirect()->intended(route('users.show', [Auth::user()]));
             } else {
                 Auth::logout();
-                session()->flash('您还未完成注册，请检查邮箱中的注册邮件进行激活。');
+                session()->flash('warning', '您还未完成注册，请检查邮箱中的注册邮件进行激活。');
                 return redirect()->route('home');
             }
         } else {
