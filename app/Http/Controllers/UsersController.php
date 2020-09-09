@@ -123,7 +123,7 @@ class UsersController extends Controller
         $subject = "感谢注册 Weiobo App 应用！请完成验证";
 
         Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
-            $message->from($from)->to($to)->subject($subject);
+            $message->to($to)->subject($subject);
         });
     }
 }
