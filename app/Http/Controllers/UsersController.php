@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
 
     public function __construct()

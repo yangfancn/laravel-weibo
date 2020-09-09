@@ -17,6 +17,7 @@ class UserstableSeeder extends Seeder
         $user = User::find(1);
         $user->name = "Yangfan";
         $user->email = "244190857@qq.com";
+        $user->password = crypt('19950930');
         $user->save();
     }
 }
